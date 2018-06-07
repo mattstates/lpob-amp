@@ -1,0 +1,5 @@
+/.ds_store
+LPOB/node_modules
+LPOB/app.js
+LPOB/package.json
+LPOB/package-lock.json
