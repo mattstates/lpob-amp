@@ -8,7 +8,9 @@
     <link rel="canonical" href="http://m.lampsplusopenbox.com/chandeliers-category/search.htm">
     <style amp-custom>
         /* GLOBAL */
-
+        :focus {
+            outline: none;
+        }
         body {
             color: #000;
             font: 16px/1.5 Helvetica, Arial, sans-serif;
@@ -18,6 +20,10 @@
         a {
             color: #000;
             text-decoration: none
+        }
+
+        .hidden {
+            display: none;
         }
 
         .sprite {
@@ -81,6 +87,29 @@
             height: 20px;
             width: 20px;
         }
+
+        .arrow.arrowRight:after {
+    border-top: none;
+    border-left: none;
+    right: 0;
+}
+
+.arrow.arrowRight:after, .arrow.arrowLeft:before {
+    content: '';
+    border: 2px solid transparent;
+    display: block;
+    width: 7px;
+    height: 7px;
+    margin-bottom: -3px;
+    position: absolute;
+    bottom: 50%;
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+    border-color: #000;
+}
 
         /* HEADER */
 
@@ -200,7 +229,30 @@
 				width: 26px;
 			}
 
+        /* PAGINATION */
+        .pagination {
+            height: 40px;
+            padding: 14px;
+            text-align: center;
+        }
+
         /* BODY */
+        .title {
+            padding: 0 14px;
+        }
+        .title h1 {
+            font-size: 18px;
+            font-weight: bold;
+            margin: 0;
+        }
+        .title p {
+            margin: 0;
+            padding: 0;
+        }
+
+        #prodDisplay {
+            clear: both;
+        }
 
 		#divCookieCrumbs {
 			border-bottom: 1px solid #9a9a9a;
@@ -301,7 +353,7 @@
 			font-size: 14px;
 			font-weight: bold;
 			line-height: 2;
-			margin: 0 auto;
+			margin: 0 auto 14px;
 			text-transform: uppercase;
 		}
 		.backToTop .spriteBackToTop {
@@ -423,14 +475,16 @@
         }
     </style>
     <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
-    <script async custom-element="amp-list" src="https://cdn.ampproject.org/v0/amp-list-0.1.js"></script>
-    <script async custom-template="amp-mustache" src="https://cdn.ampproject.org/v0/amp-mustache-0.1.js"></script>
     <script async custom-element="amp-form" src="https://cdn.ampproject.org/v0/amp-form-0.1.js"></script>
+    <script async custom-element="amp-list" src="https://cdn.ampproject.org/v0/amp-list-0.1.js"></script>
+    <script async custom-element="amp-selector" src="https://cdn.ampproject.org/v0/amp-selector-0.1.js"></script>
     <script async custom-element="amp-sidebar" src="https://cdn.ampproject.org/v0/amp-sidebar-0.1.js"></script>
+    <script async custom-template="amp-mustache" src="https://cdn.ampproject.org/v0/amp-mustache-0.1.js"></script>
+
 
 </head>
 
-<body>
+<body id="headerbar">
 	<!-- HEADER -->
 	<amp-sidebar id="sidebar1" layout="nodisplay" side="left">
 			<ul class="sidebar">
@@ -505,7 +559,20 @@
 	<!-- BODY -->
 	<div id="divCookieCrumbs">    
 		<a href="http://m.lampsplusopenbox.com">Home</a>
-	</div>
+    </div>
+    <div class="title">
+        <h1>Crystal</h1>
+        <p>164 Results</p>
+    </div>
+    <div id="paginationTop" class="pagination">
+        <select class="pageDropdown">
+            <option>Page 1 of 5</option>
+            <option>Page 2 of 5</option>
+            <option>Page 3 of 5</option>
+            <option>Page 4 of 5</option>
+            <option>Page 5 of 5</option>
+        </select>
+    </div>
     <div id="prodDisplay">
         <amp-list id="prodDisplayAmp" width="auto" height="1000" layout="flex-item" src="./amp-sort-chandeliers.json">
             <template type="amp-mustache" id="amp-sort-list">
@@ -529,7 +596,16 @@
                 </div>
             </template>
         </amp-list>
-	</div>
+    </div>
+    <div id="paginationBottom" class="pagination">
+            <select class="pageDropdown">
+                <option>Page 1 of 5</option>
+                <option>Page 2 of 5</option>
+                <option>Page 3 of 5</option>
+                <option>Page 4 of 5</option>
+                <option>Page 5 of 5</option>
+            </select>
+        </div>
 	
 	<button id="scrollToTopButton"
 		on="tap:headerbar.scrollTo(duration=200)"
