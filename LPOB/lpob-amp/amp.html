@@ -103,13 +103,100 @@
 			.sortProdDescPrice {margin: 5px 0 6px}
 			a {color: #000; text-decoration: none}
 			/* FOOTER */
-            footer { background: #f1f1f1; }
+            footer {
+                background: #f1f1f1;
+                position: relative;
+            }
+            footer:after {
+                background: linear-gradient(to bottom, #bfbfbf 0%, rgba(191, 191, 191, 0) 100%);
+                content: '';
+                display: block;
+                filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#bfbfbf', endColorstr='#00bfbfbf', GradientType=0);
+                height: 6px;
+                pointer-events: none;
+                position: absolute;
+                top: 0;
+                width: 100%;
+                z-index: 10;
+            }
             footer a {
                 font-size: 18px;
                 font-weight: bold;
+                padding: 0 14px;
                 text-decoration: none;
             }
-            
+            footer .tagline {
+                color: #333;
+                font-size: 18px;
+                margin: 0;
+                padding: 15px 0 8px;
+                text-align: center;
+                text-transform: none;
+            }
+            footer fieldset {
+                border: none;
+            }
+            footer input {
+                box-sizing: border-box;
+                height: 40px;
+                padding-bottom: 1.5px;
+                padding-top: 1.5px;
+            }
+            footer input[type="email"] {
+                border-radius: 0;
+                border: 1px solid #999;
+                font-size: 18px;
+                margin-right: 2%;
+                outline: none;
+                padding: 0 8px;
+                width: 68%;
+            }
+            footer input[type="submit"] {
+                background: #333;
+                border: 0;
+                color: #fff;
+                float: right;
+                font-size: 15px;
+                font-weight: bold;
+                line-height: 40px;
+                width: 30%;
+            }
+            footer .links {
+                border-bottom: 1px solid #fff;
+                line-height: 52px;
+            }
+            footer .desktop {
+                background: linear-gradient(to bottom, white 0%, #eeeeee 100%);
+                border: 0;
+                border: 1px solid #999;
+                color: #000;
+                display: block;
+                filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#eeeeee',GradientType=0 );
+                font-size: 15px;
+                font-weight: bold;
+                height: 54px;
+                line-height: 51px;
+                margin: 16px auto 3px;
+                max-width: 210px;
+                padding: 0;
+                text-align: center;
+            }
+            footer .privacy {
+                font-weight: normal;
+                margin: 0 .5em;
+                text-align: center;
+                padding: 14px 0;
+            }
+            footer .privacy a {
+                font-size: 15px;
+                font-weight: 400;
+                text-decoration: underline;
+            }
+
+            footer .copyright {
+                text-align: center;
+                padding: 14px 0;
+            }
 		</style>
 		<style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>	
 		<script async custom-element="amp-list" src="https://cdn.ampproject.org/v0/amp-list-0.1.js"></script>
@@ -165,25 +252,16 @@
 		
         <!-- FOOTER -->
         <footer>
-			<div><p>Get Special Offers by E-mail</p></div>
+			<p class="tagline">Get Special Offers by E-mail</p>
         <form method="post"
-    action-xhr="https://example.com/subscribe"
+    action-xhr="/subscribe"
     target="_top">
     <fieldset>
-      <label>
-        <span>Name:</span>
-        <input type="text"
-          name="name"
-          required>
-      </label>
-      <br>
-      <label>
-        <span>Email:</span>
         <input type="email"
           name="email"
+          placeholder="Enter e-mail address"
           required>
-      </label>
-      <br>
+    
       <input type="submit"
         value="Subscribe">
     </fieldset>
@@ -201,17 +279,17 @@
 
   <amp-list width="auto" height="54" layout="fixed-height" items="footerLinks" src="./amp-navigation.json">
     <template type="amp-mustache" id="footerLinks">
-        <div class="sortProd">
+        <div class="links">
             <a href="{{href}}">
                 {{text}}
             </a>
         </div>
     </template>
   </amp-list>
-  <a href="http://www.lampsplusopenbox.com/chandeliers-category/crystal-style/search.htm?MobileOptOut=1">View Desktop Site</a>
-  <div>
-        <a href="http://m.lampsplusopenbox.com/sitehelpandpolicies" data-ga-track-event="false" data-ga-category="M-Footer" data-ga-action="Click-Privacy Policy" data-ga-event-trigger="click">Privacy Policy</a>
-        <a href="http://m.lampsplusopenbox.com/termsofuse" data-ga-track-event="false" data-ga-category="M-Footer" data-ga-action="Click-Terms of Use" data-ga-event-trigger="click">Terms of Use</a>
+  <a class="desktop" href="http://www.lampsplusopenbox.com/chandeliers-category/crystal-style/search.htm?MobileOptOut=1">View Desktop Site</a>
+  <div class="privacy">
+        <a href="/sitehelpandpolicies" data-ga-track-event="false" data-ga-category="M-Footer" data-ga-action="Click-Privacy Policy" data-ga-event-trigger="click">Privacy Policy</a>
+        <a href="/termsofuse" data-ga-track-event="false" data-ga-category="M-Footer" data-ga-action="Click-Terms of Use" data-ga-event-trigger="click">Terms of Use</a>
   </div>
   <div class="copyright">&copy; 2018 Lamps Plus, Inc.</div>
 </footer>
