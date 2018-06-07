@@ -7,6 +7,13 @@
 		<link rel="canonical" href="http://m.lampsplusopenbox.com/chandeliers-category/search.htm">
 		<style amp-custom>
             /* GLOBAL */
+            body {
+                color: #000;
+                font: 16px/1.5 Helvetica, Arial, sans-serif;
+                margin: 0;
+            }
+            a {color: #000; text-decoration: none}
+
             /* HEADER */
 			.headerbar {
 				height: 62px;
@@ -39,8 +46,14 @@
 				top: 50%;
 				width: 100%;
 			}
-			a {color: #000; text-decoration: none}
 			/* FOOTER */
+            footer { background: #f1f1f1; }
+            footer a {
+                font-size: 18px;
+                font-weight: bold;
+                text-decoration: none;
+            }
+            
 		</style>
 		<style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>	
 		<script async custom-element="amp-list" src="https://cdn.ampproject.org/v0/amp-list-0.1.js"></script>
@@ -130,7 +143,7 @@
     </div>
   </form>
 
-  <amp-list width="auto" height="200" layout="fixed-height" items="footerLinks" src="./amp-navigation.json">
+  <amp-list width="auto" height="54" layout="fixed-height" items="footerLinks" src="./amp-navigation.json">
     <template type="amp-mustache" id="footerLinks">
         <div class="sortProd">
             <a href="{{href}}">
