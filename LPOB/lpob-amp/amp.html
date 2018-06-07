@@ -8,6 +8,10 @@
 		<style amp-custom>
             /* GLOBAL */
             /* HEADER */
+			.headerbar {
+				height: 62px;
+				background-color: #333;
+			}
             /* BODY */
 			.sortQty, .sortOutletPrice {font: bold 15px/16px Helvetica; }
 			.sortOutletPrice {margin: 5px 0 6px}
@@ -57,8 +61,12 @@
 			</amp-sidebar>
 		<header class="headerbar">
 				<div role="button" on="tap:sidebar1.toggle" tabindex="0" class="hamburger">☰</div>
-				<div class="site-name">News Site</div>
-			</header>   
+				<a href="http://m.lampsplusopenbox.com/" id="logoWrapper" itemscope="" itemprop="url" itemtype="http://schema.org/Brand" data-ga-track-event="false" data-ga-category="M-Header" data-ga-action="Click-Logo" data-ga-event-trigger="click">
+					<span class="sprite spriteLogo" itemprop="logo">
+						Lamps Plus Open Box: Save 20% - 70% Satisfaction Guaranteed!
+					</span>
+				</a>
+			</header>
 	<header>
 		News Site
 	</header>
