@@ -22,16 +22,6 @@
 	<body>
         <!-- HEADER -->
 		<!-- BODY -->
-		<amp-list width="auto" height="1000" layout="fixed-height" src="./amp-sort-chandeliers.json">
-			<template type="amp-mustache" id="amp-template-id">
-				<div class="sortProd">
-					<a href="{{url}}">
-						<amp-img src="{{image}}" title="{{name}}" alt="{{name}}" layout="responsive" width="250" height="250"></amp-img>
-					</a>
-					{{#isSoldOut}}<div class="sortProdImgSoldOut">Sold Out</div>{{/isSoldOut}}
-				</div>
-				<a class="sortProdTitle" href="{{url}}">{{name}}</a>
-
 		<div id="prodDisplay">
 			<amp-list width="auto" height="100" layout="fixed-height" src="./amp-sort-chandeliers.json">
 				<template type="amp-mustache" id="amp-template-id">
