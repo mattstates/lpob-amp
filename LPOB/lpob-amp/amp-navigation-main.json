@@ -1,0 +1,47 @@
+{
+    "level1": [
+        {
+            "text": "chandeliers",
+            "target": "chandeliers"
+        },
+        {
+            "text": "ceiling lights",
+            "target": "ceiling"
+        },
+        {
+            "text": "lamps",
+            "target": "lamps"
+        }
+    ],
+    "chandeliers": [
+        {
+            "text": "All Chandeliers",
+            "href": "http://m.lampsplusopenbox.com/chandeliers-category/search.htm"
+        },
+        {
+            "text": "Crystal Chandeliers",
+            "href": "http://m.lampsplusopenbox.com/chandeliers-category/crystal-style/search.htm"
+        },
+        {
+            "text": "Dining - Living Room",
+            "href": "http://m.lampsplusopenbox.com/chandeliers-category/dining+living+room-usage/search.htm"
+        },
+        {
+            "text": "Energy Efficient",
+            "href": "http://m.lampsplusopenbox.com/chandeliers-category/energy+efficient-type/search.htm"
+        }
+    ],
+    "ceiling": [
+        {
+            "text": "Ceiling Medallions",
+            "href": "http://m.lampsplusopenbox.com/ceiling+medallions-category/search.htm"
+        },
+        {
+            "text": "Close to Ceiling Lights",
+            "href": "http://m.lampsplusopenbox.com/close+to+ceiling+lights-category/search.htm"
+        }
+    ],
+    "lamps": [
+        
+    ]
+}
