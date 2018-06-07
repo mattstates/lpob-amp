@@ -1,0 +1,24 @@
+{
+	"footerLinks": [
+	    {
+            "text": "877-233-7094",
+            "href": "tel:1-877-233-7094"
+        },
+        {
+            "text": "Order Status",
+            "href": "/protected/account/order-history.aspx"
+        },
+        {
+            "text": "Customer Support",
+            "href": "/page/customer-support"
+        },
+        {
+            "text": "About Us",
+            "href": "/page/learn-more"
+        },
+        {
+            "text": "LampsPlus.com",
+            "href": "https://www.lampsplus.com/"
+        }
+    ]
+}
