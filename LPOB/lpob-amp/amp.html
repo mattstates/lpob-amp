@@ -6,15 +6,52 @@
 		<script async src="https://cdn.ampproject.org/v0.js"></script>
 		<link rel="canonical" href="http://m.lampsplusopenbox.com/chandeliers-category/search.htm">
 		<style amp-custom>
-            /* GLOBAL */
-            /* HEADER */
-			.headerbar {
-				height: 62px;
-				background-color: #333;
+				/* GLOBAL */
+			.sprite {
+				background: transparent url("/images/global-sprite.png") no-repeat;
+				background-size: 344px 80px;
+				display: inline-block;
 			}
-            /* BODY */
+			@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-device-pixel-ratio: 2) {
+				.sprite { background-image: transparent url("/images/global-sprite@2x.png") no-repeat; }
+			}
+			.sprite.spriteCart { background-position: -160px 0; height: 26px; width: 40px; }
+			.sprite.spriteClose { background-position: -320px 0; height: 24px; width: 24px; }
+			.sprite.spriteLock { background-position: -240px -24px; height: 20px; width: 16px; }
+			.sprite.spriteLogo { background-position: 0 0; height: 40px; width: 118px; }
+			.sprite.spriteMenu { background-position: -210px 0; height: 25px; width: 25px; }
+			.sprite.spriteSearch { background-position: -125px 0; height: 24px; width: 25px; }
+			.sprite.spriteZoom { background-position: -240px 0; height: 20px; width: 20px; }
+			/* HEADER */
+			.headerbar {
+				color: #fff;
+				height: 55px;
+				background-color: #333;
+				display: flex;
+			}
+			.hs1 {
+				width: 25%;
+			}
+			.hs2 {
+				width: 50%;
+				align-items: center;
+				display: inline-flex;
+				justify-content: center;
+			}
+			.hs3 {
+				width: 25%;
+				align-items: center;
+				display: inline-flex;
+				justify-content: center;
+			}
+			.hamburger {
+				font-size: 2rem;
+				font-weight: bold;
+				padding: 1rem .5rem;
+			}
+			/* BODY */
 			.sortProdcontainer {float: left; max-width: 250px; width: 50%;}
-            /* FOOTER */
+			/* FOOTER */
 		</style>
 		<style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>	
 		<script async custom-element="amp-list" src="https://cdn.ampproject.org/v0/amp-list-0.1.js"></script>
@@ -34,18 +71,17 @@
 				</ul>
 			</amp-sidebar>
 		<header class="headerbar">
-				<div role="button" on="tap:sidebar1.toggle" tabindex="0" class="hamburger">☰</div>
-				<a href="http://m.lampsplusopenbox.com/" id="logoWrapper" itemscope="" itemprop="url" itemtype="http://schema.org/Brand" data-ga-track-event="false" data-ga-category="M-Header" data-ga-action="Click-Logo" data-ga-event-trigger="click">
-					<span class="sprite spriteLogo" itemprop="logo">
-						Lamps Plus Open Box: Save 20% - 70% Satisfaction Guaranteed!
-					</span>
-				</a>
-			</header>
-	<header>
-		News Site
-	</header>
+			<div class="hs1">
+					<span role="button" on="tap:sidebar1.toggle" tabindex="0" class="hamburger">☰</span>
+			</div>
+			<div class="hs2">
+				<a class="sprite spriteLogo" href="http://m.lampsplusopenbox.com/" itemscope="" itemprop="url" itemtype="http://schema.org/Brand" data-ga-track-event="false" data-ga-category="M-Header" data-ga-action="Click-Logo" data-ga-event-trigger="click"></a>
+			</div>
+			<div class="hs3">
+				<span class="sprite spriteCart"></span>
+			</div>
+		</header>
 		<!-- BODY -->
-	
 		<div id="prodDisplay">
 			<amp-list width="auto" height="1000" layout="fixed-height" src="./amp-sort-chandeliers.json">
 				<template type="amp-mustache" id="amp-template-id">
