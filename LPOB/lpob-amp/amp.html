@@ -1,297 +1,391 @@
 <!doctype html>
 <html ⚡ lang="en">
-	<head>
-		<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
-		<meta charset="utf-8">
-		<script async src="https://cdn.ampproject.org/v0.js"></script>
-		<link rel="canonical" href="http://m.lampsplusopenbox.com/chandeliers-category/search.htm">
-		<style amp-custom>
-            /* GLOBAL */
-            body {
-                color: #000;
-                font: 16px/1.5 Helvetica, Arial, sans-serif;
-                margin: 0;
-            }
-            a {color: #000; text-decoration: none}
-			.sprite {
-				background: transparent url("/images/global-sprite.png") no-repeat;
-				background-size: 344px 80px;
-				display: inline-block;
-			}
-			@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-device-pixel-ratio: 2) {
-				.sprite { background-image: url("/images/global-sprite@2x.png"); }
-			}
-			@media only screen and (-webkit-min-device-pixel-ratio: 3), only screen and (min-device-pixel-ratio: 3) {
-				.sprite { background-image: url("/images/global-sprite@3x.png"); }
-			}
-			.sprite.spriteCart { background-position: -160px 0; height: 26px; width: 40px; }
-			.sprite.spriteClose { background-position: -320px 0; height: 24px; width: 24px; }
-			.sprite.spriteLock { background-position: -240px -24px; height: 20px; width: 16px; }
-			.sprite.spriteLogo { background-position: 0 0; height: 40px; width: 118px; }
-			.sprite.spriteMenu { background-position: -210px 0; height: 25px; width: 25px; }
-			.sprite.spriteSearch { background-position: -125px 0; height: 24px; width: 25px; }
-			.sprite.spriteZoom { background-position: -240px 0; height: 20px; width: 20px; }
 
-            /* HEADER */
-			.headerbar {
-				color: #fff;
-				height: 55px;
-				background-color: #333;
-				display: flex;
-			}
-			.hs1 {
-				width: 25%;
-			}
-			.hs2 {
-				width: 50%;
-				align-items: center;
-				display: inline-flex;
-				justify-content: center;
-			}
-			.hs3 {
-				width: 25%;
-				align-items: center;
-				display: inline-flex;
-				justify-content: center;
-			}
-			.hamburger {
-				font-size: 2rem;
-				font-weight: bold;
-				padding: 1rem .5rem;
-			}
+<head>
+    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+    <meta charset="utf-8">
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <link rel="canonical" href="http://m.lampsplusopenbox.com/chandeliers-category/search.htm">
+    <style amp-custom>
+        /* GLOBAL */
 
-            /* BODY */
-			.sortQty, .sortOutletPrice {font: bold 15px/16px Helvetica }
-			.currencySign {
-				font-size: .7em;
-				position: relative;
-				top: -.35em; 
-				vertical-align: baseline }
-			.sortProdcontainer {
-				border-bottom: 1px solid #9a9a9a;
-				font: 12px/16px Helvetica;
-				float: left;
-				max-width: 250px;
-				padding: 2%;
-				width: 45%
-			}
-			.sortProdcontainer:nth-child(odd) {border-right:1px solid #9a9a9a}
-			.sortProd { position: relative}
-			.sortProdTitle {display:inline-block; height: 48px}
-			.sortProdImgSoldOut {
-				color: #fff;
-				font-size: 24px;
-				font-weight: bold;
-				padding: 1rem .5rem;
-				letter-spacing: -0.04em;
-				line-height: 1;
-				margin-top: -0.5em;
-				pointer-events: none;
-				position: absolute;
-				text-align: center;
-				text-shadow: 0 0 8px rgba(0,0,0,0.75);
-				text-transform: uppercase;
-				top: 50%;
-				width: 100%;
-			}
-			.sortProdSoldOut {
-				color: #C00;
-				font-size: 15px;
-				font-weight: bold;
-				text-transform: uppercase;
-			}
-			.sortProdDescPrice {margin: 5px 0 6px}
-			a {color: #000; text-decoration: none}
-			/* FOOTER */
-            footer {
-                background: #f1f1f1;
-                position: relative;
-            }
-            footer:after {
-                background: linear-gradient(to bottom, #bfbfbf 0%, rgba(191, 191, 191, 0) 100%);
-                content: '';
-                display: block;
-                filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#bfbfbf', endColorstr='#00bfbfbf', GradientType=0);
-                height: 6px;
-                pointer-events: none;
-                position: absolute;
-                top: 0;
-                width: 100%;
-                z-index: 10;
-            }
-            footer a {
-                font-size: 18px;
-                font-weight: bold;
-                padding: 0 14px;
-                text-decoration: none;
-            }
-            footer .tagline {
-                color: #333;
-                font-size: 18px;
-                margin: 0;
-                padding: 15px 0 8px;
-                text-align: center;
-                text-transform: none;
-            }
-            footer fieldset {
-                border: none;
-            }
-            footer input {
-                box-sizing: border-box;
-                height: 40px;
-                padding-bottom: 1.5px;
-                padding-top: 1.5px;
-            }
-            footer input[type="email"] {
-                border-radius: 0;
-                border: 1px solid #999;
-                font-size: 18px;
-                margin-right: 2%;
-                outline: none;
-                padding: 0 8px;
-                width: 68%;
-            }
-            footer input[type="submit"] {
-                background: #333;
-                border: 0;
-                color: #fff;
-                float: right;
-                font-size: 15px;
-                font-weight: bold;
-                line-height: 40px;
-                width: 30%;
-            }
-            footer .links {
-                border-bottom: 1px solid #fff;
-                line-height: 52px;
-            }
-            footer .desktop {
-                background: linear-gradient(to bottom, white 0%, #eeeeee 100%);
-                border: 0;
-                border: 1px solid #999;
-                color: #000;
-                display: block;
-                filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#eeeeee',GradientType=0 );
-                font-size: 15px;
-                font-weight: bold;
-                height: 54px;
-                line-height: 51px;
-                margin: 16px auto 3px;
-                max-width: 210px;
-                padding: 0;
-                text-align: center;
-            }
-            footer .privacy {
-                font-weight: normal;
-                margin: 0 .5em;
-                text-align: center;
-                padding: 14px 0;
-            }
-            footer .privacy a {
-                font-size: 15px;
-                font-weight: 400;
-                text-decoration: underline;
-            }
+        body {
+            color: #000;
+            font: 16px/1.5 Helvetica, Arial, sans-serif;
+            margin: 0;
+        }
 
-            footer .copyright {
-                text-align: center;
-                padding: 14px 0;
+        a {
+            color: #000;
+            text-decoration: none
+        }
+
+        .sprite {
+            background: transparent url("/images/global-sprite.png") no-repeat;
+            background-size: 344px 80px;
+            display: inline-block;
+        }
+
+        @media only screen and (-webkit-min-device-pixel-ratio: 2),
+        only screen and (min-device-pixel-ratio: 2) {
+            .sprite {
+                background-image: url("/images/global-sprite@2x.png");
             }
-		</style>
-		<style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>	
-		<script async custom-element="amp-list" src="https://cdn.ampproject.org/v0/amp-list-0.1.js"></script>
-		<script async custom-template="amp-mustache" src="https://cdn.ampproject.org/v0/amp-mustache-0.1.js"></script>
-        <script async custom-element="amp-form" src="https://cdn.ampproject.org/v0/amp-form-0.1.js"></script>
-        <script async custom-element="amp-sidebar" src="https://cdn.ampproject.org/v0/amp-sidebar-0.1.js"></script>
+        }
 
-	</head>
-	<body>
-		<!-- HEADER -->
-		<amp-sidebar id="sidebar1" layout="nodisplay" side="left">
-				<div role="button" aria-label="close sidebar" on="tap:sidebar1.toggle" tabindex="0" class="close-sidebar">✕</div>
-				<ul class="sidebar">
-					<li><a href="#">Example 1</a></li>
-					<li><a href="#">Example 2</a></li>
-					<li><a href="#">Example 3</a></li>
-				</ul>
-			</amp-sidebar>
-		<header class="headerbar">
-			<div class="hs1">
-					<span role="button" on="tap:sidebar1.toggle" tabindex="0" class="hamburger">☰</span>
-			</div>
-			<div class="hs2">
-				<a class="sprite spriteLogo" href="http://m.lampsplusopenbox.com/" itemscope="" itemprop="url" itemtype="http://schema.org/Brand" data-ga-track-event="false" data-ga-category="M-Header" data-ga-action="Click-Logo" data-ga-event-trigger="click"></a>
-			</div>
-			<div class="hs3">
-				<span class="sprite spriteCart"></span>
-			</div>
-		</header>
-		<!-- BODY -->
-		<div id="prodDisplay">
-			<amp-list id="prodDisplayAmp" width="auto" height="1000" layout="flex-item" src="./amp-sort-chandeliers.json">
-				<template type="amp-mustache" id="amp-sort-list">
-					<div class="sortProdcontainer">
-						<div class="sortProd">
-							<a href="{{url}}">
-								<amp-img src="{{image}}" title="{{name}}" alt="{{name}}" layout="responsive" width="250" height="250"></amp-img>
-							</a>
-							{{#isSoldOut}}<div class="sortProdImgSoldOut">Sold Out</div>{{/isSoldOut}}
-						</div>
-						<a class="sortProdTitle" href="{{url}}">{{name}}</a>
-						<div class="sortProdDescPrice">
-							<span class="sortOutletPrice"><sup class="currencySign">$</sup>{{price}}</span>
-							<span class="sortPriceDescription">{{priceDescription}}</span>
-						</div>
-						{{^isSoldOut}}<div class="sortQty">{{quantityRemaining}} Left</div>{{/isSoldOut}}
-						{{#isSoldOut}}<div class="sortProdSoldOut">Sold Out</div>{{/isSoldOut}}
-					</div>
-				</template>
-			</amp-list>
-		</div>
+        @media only screen and (-webkit-min-device-pixel-ratio: 3),
+        only screen and (min-device-pixel-ratio: 3) {
+            .sprite {
+                background-image: url("/images/global-sprite@3x.png");
+            }
+        }
 
-		
-        <!-- FOOTER -->
-        <footer>
-			<p class="tagline">Get Special Offers by E-mail</p>
-        <form method="post"
-    action-xhr="/subscribe"
-    target="_top">
-    <fieldset>
-        <input type="email"
-          name="email"
-          placeholder="Enter e-mail address"
-          required>
-    
-      <input type="submit"
-        value="Subscribe">
-    </fieldset>
-    <div submit-success>
-      <template type="amp-mustache">
-        Subscription successful!
-      </template>
-    </div>
-    <div submit-error>
-      <template type="amp-mustache">
-        Subscription failed!
-      </template>
-    </div>
-  </form>
+        .sprite.spriteCart {
+            background-position: -160px 0;
+            height: 26px;
+            width: 40px;
+        }
 
-  <amp-list width="auto" height="54" layout="fixed-height" items="footerLinks" src="./amp-navigation.json">
-    <template type="amp-mustache" id="footerLinks">
-        <div class="links">
-            <a href="{{href}}">
-                {{text}}
-            </a>
+        .sprite.spriteClose {
+            background-position: -320px 0;
+            height: 24px;
+            width: 24px;
+        }
+
+        .sprite.spriteLock {
+            background-position: -240px -24px;
+            height: 20px;
+            width: 16px;
+        }
+
+        .sprite.spriteLogo {
+            background-position: 0 0;
+            height: 40px;
+            width: 118px;
+        }
+
+        .sprite.spriteMenu {
+            background-position: -210px 0;
+            height: 25px;
+            width: 25px;
+        }
+
+        .sprite.spriteSearch {
+            background-position: -125px 0;
+            height: 24px;
+            width: 25px;
+        }
+
+        .sprite.spriteZoom {
+            background-position: -240px 0;
+            height: 20px;
+            width: 20px;
+        }
+
+        /* HEADER */
+
+        .headerbar {
+            background-color: #333;
+            color: #fff;
+            display: flex;
+            height: 55px;
+        }
+
+        .hs1 {
+            width: 25%;
+        }
+
+        .hs2 {
+            align-items: center;
+            display: inline-flex;
+            justify-content: center;
+            width: 50%;
+        }
+
+        .hs3 {
+            align-items: center;
+            display: inline-flex;
+            justify-content: center;
+            width: 25%;
+        }
+
+        .hamburger {
+            font-size: 2rem;
+            font-weight: bold;
+            padding: 1rem .5rem;
+        }
+
+        /* BODY */
+
+        .sortQty,
+        .sortOutletPrice {
+            font: bold 15px/16px Helvetica
+        }
+
+        .currencySign {
+            font-size: .7em;
+            position: relative;
+            top: -.35em;
+            vertical-align: baseline
+        }
+
+        .sortProdcontainer {
+            border-bottom: 1px solid #9a9a9a;
+            float: left;
+            font: 12px/16px Helvetica;
+            max-width: 250px;
+            padding: 2%;
+            width: 45%
+        }
+
+        .sortProdcontainer:nth-child(odd) {
+            border-right: 1px solid #9a9a9a;
+        }
+
+        .sortProd {
+            position: relative;
+        }
+
+        .sortProdTitle {
+            display: inline-block;
+            height: 48px;
+        }
+
+        .sortProdImgSoldOut {
+            color: #fff;
+            font-size: 24px;
+            font-weight: bold;
+            letter-spacing: -0.04em;
+            line-height: 1;
+            margin-top: -0.5em;
+            padding: 1rem .5rem;
+            pointer-events: none;
+            position: absolute;
+            text-align: center;
+            text-shadow: 0 0 8px rgba(0, 0, 0, 0.75);
+            text-transform: uppercase;
+            top: 50%;
+            width: 100%;
+        }
+
+        .sortProdSoldOut {
+            color: #C00;
+            font-size: 15px;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        .sortProdDescPrice {
+            margin: 5px 0 6px
+        }
+
+        /* FOOTER */
+
+        footer {
+            background: #f1f1f1;
+            position: relative;
+        }
+
+        footer:after {
+            background: linear-gradient(to bottom, #bfbfbf 0%, rgba(191, 191, 191, 0) 100%);
+            content: '';
+            display: block;
+            height: 6px;
+            pointer-events: none;
+            position: absolute;
+            top: 0;
+            width: 100%;
+            z-index: 10;
+        }
+
+        footer a {
+            font-size: 18px;
+            font-weight: bold;
+            padding: 0 14px;
+            text-decoration: none;
+        }
+
+        footer .tagline {
+            color: #333;
+            font-size: 18px;
+            margin: 0;
+            padding: 15px 0 8px;
+            text-align: center;
+            text-transform: none;
+        }
+
+        footer fieldset {
+            border: none;
+        }
+
+        footer input {
+            box-sizing: border-box;
+            height: 40px;
+            padding-bottom: 1.5px;
+            padding-top: 1.5px;
+        }
+
+        footer input[type="email"] {
+            border-radius: 0;
+            border: 1px solid #999;
+            font-size: 18px;
+            margin-right: 2%;
+            outline: none;
+            padding: 0 8px;
+            width: 68%;
+        }
+
+        footer input[type="submit"] {
+            background: #333;
+            border: 0;
+            color: #fff;
+            float: right;
+            font-size: 15px;
+            font-weight: bold;
+            line-height: 40px;
+            width: 30%;
+        }
+
+        footer .links {
+            border-bottom: 1px solid #fff;
+            line-height: 52px;
+        }
+
+        footer .desktop {
+            background: linear-gradient(to bottom, white 0%, #eeeeee 100%);
+            border: 0;
+            border: 1px solid #999;
+            color: #000;
+            display: block;
+            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#eeeeee', GradientType=0);
+            font-size: 15px;
+            font-weight: bold;
+            height: 54px;
+            line-height: 51px;
+            margin: 16px auto 3px;
+            max-width: 210px;
+            padding: 0;
+            text-align: center;
+        }
+
+        footer .privacy {
+            font-weight: normal;
+            margin: 0 .5em;
+            text-align: center;
+            padding: 14px 0;
+        }
+
+        footer .privacy a {
+            font-size: 15px;
+            font-weight: 400;
+            text-decoration: underline;
+        }
+
+        footer .copyright {
+            text-align: center;
+            padding: 14px 0;
+        }
+    </style>
+    <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+    <script async custom-element="amp-list" src="https://cdn.ampproject.org/v0/amp-list-0.1.js"></script>
+    <script async custom-template="amp-mustache" src="https://cdn.ampproject.org/v0/amp-mustache-0.1.js"></script>
+    <script async custom-element="amp-form" src="https://cdn.ampproject.org/v0/amp-form-0.1.js"></script>
+    <script async custom-element="amp-sidebar" src="https://cdn.ampproject.org/v0/amp-sidebar-0.1.js"></script>
+
+</head>
+
+<body>
+    <!-- HEADER -->
+    <amp-sidebar id="sidebar1" layout="nodisplay" side="left">
+        <div role="button" aria-label="close sidebar" on="tap:sidebar1.toggle" tabindex="0" class="close-sidebar">✕</div>
+        <ul class="sidebar">
+            <li>
+                <a href="#">Example 1</a>
+            </li>
+            <li>
+                <a href="#">Example 2</a>
+            </li>
+            <li>
+                <a href="#">Example 3</a>
+            </li>
+        </ul>
+    </amp-sidebar>
+    <header class="headerbar">
+        <div class="hs1">
+            <span role="button" on="tap:sidebar1.toggle" tabindex="0" class="hamburger">☰</span>
         </div>
-    </template>
-  </amp-list>
-  <a class="desktop" href="http://www.lampsplusopenbox.com/chandeliers-category/crystal-style/search.htm?MobileOptOut=1">View Desktop Site</a>
-  <div class="privacy">
-        <a href="/sitehelpandpolicies" data-ga-track-event="false" data-ga-category="M-Footer" data-ga-action="Click-Privacy Policy" data-ga-event-trigger="click">Privacy Policy</a>
-        <a href="/termsofuse" data-ga-track-event="false" data-ga-category="M-Footer" data-ga-action="Click-Terms of Use" data-ga-event-trigger="click">Terms of Use</a>
-  </div>
-  <div class="copyright">&copy; 2018 Lamps Plus, Inc.</div>
-</footer>
-	</body>
+        <div class="hs2">
+            <a class="sprite spriteLogo" href="http://m.lampsplusopenbox.com/" itemscope="" itemprop="url" itemtype="http://schema.org/Brand"
+                data-ga-track-event="false" data-ga-category="M-Header" data-ga-action="Click-Logo" data-ga-event-trigger="click"></a>
+        </div>
+        <div class="hs3">
+            <span class="sprite spriteCart"></span>
+        </div>
+    </header>
+    <!-- BODY -->
+    <div id="prodDisplay">
+        <amp-list id="prodDisplayAmp" width="auto" height="1000" layout="flex-item" src="./amp-sort-chandeliers.json">
+            <template type="amp-mustache" id="amp-sort-list">
+                <div class="sortProdcontainer">
+                    <div class="sortProd">
+                        <a href="{{url}}">
+                            <amp-img src="{{image}}" title="{{name}}" alt="{{name}}" layout="responsive" width="250" height="250"></amp-img>
+                        </a>
+                        {{#isSoldOut}}
+                        <div class="sortProdImgSoldOut">Sold Out</div>{{/isSoldOut}}
+                    </div>
+                    <a class="sortProdTitle" href="{{url}}">{{name}}</a>
+                    <div class="sortProdDescPrice">
+                        <span class="sortOutletPrice">
+                            <sup class="currencySign">$</sup>{{price}}</span>
+                        <span class="sortPriceDescription">{{priceDescription}}</span>
+                    </div>
+                    {{^isSoldOut}}
+                    <div class="sortQty">{{quantityRemaining}} Left</div>{{/isSoldOut}} {{#isSoldOut}}
+                    <div class="sortProdSoldOut">Sold Out</div>{{/isSoldOut}}
+                </div>
+            </template>
+        </amp-list>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+        <p class="tagline">Get Special Offers by E-mail</p>
+        <form method="post" action-xhr="/subscribe" target="_top">
+            <fieldset>
+                <input type="email" name="email" placeholder="Enter e-mail address" required>
+
+                <input type="submit" value="Subscribe">
+            </fieldset>
+            <div submit-success>
+                <template type="amp-mustache">
+                    Subscription successful!
+                </template>
+            </div>
+            <div submit-error>
+                <template type="amp-mustache">
+                    Subscription failed!
+                </template>
+            </div>
+        </form>
+
+        <amp-list width="auto" height="54" layout="fixed-height" items="footerLinks" src="./amp-navigation.json">
+            <template type="amp-mustache" id="footerLinks">
+                <div class="links">
+                    <a href="{{href}}">
+                        {{text}}
+                    </a>
+                </div>
+            </template>
+        </amp-list>
+        <a class="desktop" href="http://www.lampsplusopenbox.com/chandeliers-category/crystal-style/search.htm?MobileOptOut=1">View Desktop Site</a>
+        <div class="privacy">
+            <a href="/sitehelpandpolicies" data-ga-track-event="false" data-ga-category="M-Footer" data-ga-action="Click-Privacy Policy"
+                data-ga-event-trigger="click">Privacy Policy</a>
+            <a href="/termsofuse" data-ga-track-event="false" data-ga-category="M-Footer" data-ga-action="Click-Terms of Use" data-ga-event-trigger="click">Terms of Use</a>
+        </div>
+        <div class="copyright">&copy; 2018 Lamps Plus, Inc.</div>
+    </footer>
+</body>
+
 </html>
