@@ -19,7 +19,10 @@
 				display: inline-block;
 			}
 			@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-device-pixel-ratio: 2) {
-				.sprite { background-image: transparent url("/images/global-sprite@2x.png") no-repeat; }
+				.sprite { background-image: url("/images/global-sprite@2x.png"); }
+			}
+			@media only screen and (-webkit-min-device-pixel-ratio: 3), only screen and (min-device-pixel-ratio: 3) {
+				.sprite { background-image: url("/images/global-sprite@3x.png"); }
 			}
 			.sprite.spriteCart { background-position: -160px 0; height: 26px; width: 40px; }
 			.sprite.spriteClose { background-position: -320px 0; height: 24px; width: 24px; }
