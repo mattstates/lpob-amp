@@ -61,7 +61,37 @@
 			}
 
             /* BODY */
-			.sortQty, .sortOutletPrice {font: bold 15px/16px Helvetica }
+			#divCookieCrumbs {
+				border-bottom: 1px solid #9a9a9a;
+				font-size: 15px;
+				margin: 0 -5px;
+			}
+			#divCookieCrumbs a {
+				display: inline-block;
+				line-height: 18px;
+				padding: 12px 10px 12px 29px;
+				position: relative;
+			}
+			#divCookieCrumbs a::before {
+				content: '';
+				border: 2px solid transparent;
+				border-bottom: none;
+				border-color: #000;
+				border-right: none;
+				display: block;
+				height: 6px;
+				left: 17px;
+				width: 6px;
+				margin-bottom: -4px;
+				position: absolute;
+				bottom: 50%;
+				-webkit-transform: rotate(-45deg);
+				-moz-transform: rotate(-45deg);
+				-ms-transform: rotate(-45deg);
+				-o-transform: rotate(-45deg);
+				transform: rotate(-45deg);
+			}
+			.sortQty, .sortOutletPrice { font-weight: bold }
 			.currencySign {
 				font-size: .7em;
 				position: relative;
@@ -102,6 +132,25 @@
 			}
 			.sortProdDescPrice {margin: 5px 0 6px}
 			a {color: #000; text-decoration: none}
+			.backToTop {
+				display: block;
+				font-family: 'Arial', 'Helvetica', sans-serif;
+				font-size: 14px;
+				font-weight: bold;
+				line-height: 2;
+				margin: 0 auto;
+				text-transform: uppercase;
+			}
+			.backToTop .spriteBackToTop {
+				background-position: -119px -27px;
+				background-size: 206px 48px;
+				border-radius: 50%;
+				display: inline-block;
+				height: 20px;
+				margin-right: 5px;
+				vertical-align: middle;
+				width: 20px;
+			}
 			/* FOOTER */
             footer {
                 background: #f1f1f1;
@@ -203,7 +252,6 @@
 		<script async custom-template="amp-mustache" src="https://cdn.ampproject.org/v0/amp-mustache-0.1.js"></script>
         <script async custom-element="amp-form" src="https://cdn.ampproject.org/v0/amp-form-0.1.js"></script>
         <script async custom-element="amp-sidebar" src="https://cdn.ampproject.org/v0/amp-sidebar-0.1.js"></script>
-
 	</head>
 	<body>
 		<!-- HEADER -->
@@ -215,7 +263,7 @@
 					<li><a href="#">Example 3</a></li>
 				</ul>
 			</amp-sidebar>
-		<header class="headerbar">
+		<header id="headerbar" class="headerbar">
 			<div class="hs1">
 					<span role="button" on="tap:sidebar1.toggle" tabindex="0" class="hamburger">☰</span>
 			</div>
@@ -227,6 +275,9 @@
 			</div>
 		</header>
 		<!-- BODY -->
+		<div id="divCookieCrumbs">    
+			<a href="http://m.lampsplusopenbox.com">Home</a>
+		</div>
 		<div id="prodDisplay">
 			<amp-list id="prodDisplayAmp" width="auto" height="1000" layout="flex-item" src="./amp-sort-chandeliers.json">
 				<template type="amp-mustache" id="amp-sort-list">
@@ -249,6 +300,9 @@
 			</amp-list>
 		</div>
 
+		<button id="scrollToTopButton"
+		on="tap:headerbar.scrollTo(duration=200)"
+		class="backToTop"><span class="sprite spriteBackToTop"></span>Back To Top</button>
 		
         <!-- FOOTER -->
         <footer>
