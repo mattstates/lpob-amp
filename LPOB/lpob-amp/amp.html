@@ -19,10 +19,10 @@
 				display: inline-block;
 			}
 			@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-device-pixel-ratio: 2) {
-				.sprite { background-image: url("/images/global-sprite@2x.png"); }
+				.sprite { background-image:url("/images/global-sprite@2x.png"); }
 			}
 			@media only screen and (-webkit-min-device-pixel-ratio: 3), only screen and (min-device-pixel-ratio: 3) {
-				.sprite { background-image: url("/images/global-sprite@3x.png"); }
+				.sprite { background-image:url("/images/global-sprite@3x.png"); }
 			}
 			.sprite.spriteCart { background-position: -160px 0; height: 26px; width: 40px; }
 			.sprite.spriteClose { background-position: -320px 0; height: 24px; width: 24px; }
@@ -39,25 +39,114 @@
 				background-color: #333;
 				display: flex;
 			}
+			.hs2, .hs3 {
+				align-items: center;
+				display: inline-flex;
+				justify-content: center;
+			}
 			.hs1 {
 				width: 25%;
+				align-items: center;
+				display: inline-flex;
 			}
 			.hs2 {
 				width: 50%;
-				align-items: center;
-				display: inline-flex;
-				justify-content: center;
 			}
 			.hs3 {
 				width: 25%;
-				align-items: center;
-				display: inline-flex;
-				justify-content: center;
 			}
 			.hamburger {
 				font-size: 2rem;
 				font-weight: bold;
 				padding: 1rem .5rem;
+			}
+			.sidebar li.hot {
+				border-bottom: none;
+			}
+			.navHeader {
+				color: #900;
+				text-transform: capitalize;
+				font-weight: normal;
+				margin-top: .5rem;
+			}
+			.sidebar {
+				width: 70vw;
+				padding: 0 .5rem 0 1rem;
+			}
+			.sidebar li {
+				border-bottom: 1px solid #999;
+				font-size: 18px;
+				font-weight: bold;
+				text-transform: uppercase;
+				list-style: none;
+			}
+			.sidebar li span, .sidebar li a {
+				display: block;
+				padding: .8rem 0;
+			}
+			.sidebar li span {
+				font-weight: normal;
+				text-transform: capitalize;
+			}
+			.sidebar li span::before {
+				display: block;
+				float: left;
+				content: "‹";
+				margin-right: .25rem;
+			}			
+			.sidebar li a::after {
+				display: block;
+				float: right;
+				content: "›";
+			}
+			.searchBox {
+				padding-right: 40px;
+				width: 100%;
+				line-height: 24px;
+				height: 40px;
+				box-sizing: border-box;
+				border: 1px solid #999;
+				border-radius: 0;
+				font-size: 18px;
+				outline: none;
+				padding: 0 8px;
+				-webkit-appearance: none;
+			}
+			.searchBoxForm {
+				background: transparent;
+				height: auto;
+				position: relative;
+			}
+			.btnSubmit {
+				color: #fff;
+				background: #333;
+				border: 0;
+				height: 40px;
+				min-width: 0;
+				outline: none;
+				overflow: hidden;
+				padding: 0;
+				position: absolute;
+				right: 0;
+				text-indent: 100%;
+				top: 0;
+				width: 34px;
+			}
+			.searchBoxForm .btnSubmit:after {
+				border: 6px solid #fff;
+				border-bottom: 0;
+				border-left: 0;
+				content: '';
+				display: block;
+				height: 26px;
+				left: 2px;
+				position: absolute;
+				top: 5px;
+				-webkit-transform: rotate3d(0, 0, 1, 45deg) scale(0.5);
+				transform: rotate3d(0, 0, 1, 45deg) scale(0.5);
+				-webkit-transform-origin: center center;
+				transform-origin: center center;
+				width: 26px;
 			}
 
             /* BODY */
@@ -108,13 +197,64 @@
 	<body>
 		<!-- HEADER -->
 		<amp-sidebar id="sidebar1" layout="nodisplay" side="left">
-				<div role="button" aria-label="close sidebar" on="tap:sidebar1.toggle" tabindex="0" class="close-sidebar">✕</div>
-				<ul class="sidebar">
-					<li><a href="#">Example 1</a></li>
-					<li><a href="#">Example 2</a></li>
-					<li><a href="#">Example 3</a></li>
-				</ul>
-			</amp-sidebar>
+			<ul class="sidebar">
+				<form class="searchBoxForm" action="//m.lampsplusopenbox.com/search.htm" target="_top">
+					<input type="text" class="searchBox" name="searchBox" maxlength="100" placeholder="Search">
+					<button type="submit" class="btnSubmit">›</button>
+				</form>
+				<li class="hot"><a href="http://m.lampsplusopenbox.com/view+hot+seller+items-hotseller/search.htm" role="button">
+					Hot Sellers!
+				</a></li>
+				<div class="navHeader">Shop By Category</div>
+				<amp-list width="auto" height="100vh" items="level1" src="./amp-navigation-main.json">
+					<template type="amp-mustache" >
+						<li><a role="button" on="tap:{{target}}.toggle" tabindex="0">{{text}}</a></li>
+					</template>
+				</amp-list>
+			</ul>
+		</amp-sidebar>
+		<amp-sidebar id="chandeliers" layout="nodisplay" side="left">
+			<ul class="sidebar">
+				<form class="searchBoxForm" method="post" action-xhr="search.htm" target="_top">
+					<input type="text" class="searchBox" name="searchBox" maxlength="100" placeholder="Search">
+					<button type="submit" class="btnSubmit">Go</button>
+				</form>
+				<li><span role="button" on="tap:chandeliers.close" tabindex="0">chandeliers</span></li>
+				<amp-list width="auto" height="100vh" items="chandeliers" src="./amp-navigation-main.json">
+					<template type="amp-mustache" >
+						<li><a href="{{href}}" role="button">{{text}}</a></li>
+					</template>
+				</amp-list>
+			</ul>
+		</amp-sidebar>
+		<amp-sidebar id="ceiling" layout="nodisplay" side="left">
+			<ul class="sidebar">
+				<form class="searchBoxForm" method="post" action-xhr="search.htm" target="_top">
+					<input type="text" class="searchBox" name="searchBox" maxlength="100" placeholder="Search">
+					<button type="submit" class="btnSubmit">Go</button>
+				</form>
+				<li><span role="button" on="tap:ceiling.close" tabindex="0">ceiling lamps</span></li>
+				<amp-list width="auto" height="100vh" items="ceiling" src="./amp-navigation-main.json">
+					<template type="amp-mustache" >
+						<li><a href="{{href}}" role="button">{{text}}</a></li>
+					</template>
+				</amp-list>
+			</ul>
+		</amp-sidebar>
+		<amp-sidebar id="lamps" layout="nodisplay" side="left">
+			<ul class="sidebar">
+				<form class="searchBoxForm" method="post" action-xhr="search.htm" target="_top">
+					<input type="text" class="searchBox" name="searchBox" maxlength="100" placeholder="Search">
+					<button type="submit" class="btnSubmit">Go</button>
+				</form>
+				<li><span role="button" on="tap:lamps.close" tabindex="0">lamps</span></li>
+				<amp-list width="auto" height="100vh" items="lamps" src="./amp-navigation-main.json">
+					<template type="amp-mustache" >
+						<li><a href="{{href}}" role="button">{{text}}</span></li>
+					</template>
+				</amp-list>
+			</ul>
+		</amp-sidebar>
 		<header class="headerbar">
 			<div class="hs1">
 					<span role="button" on="tap:sidebar1.toggle" tabindex="0" class="hamburger">☰</span>
@@ -123,7 +263,7 @@
 				<a class="sprite spriteLogo" href="http://m.lampsplusopenbox.com/" itemscope="" itemprop="url" itemtype="http://schema.org/Brand" data-ga-track-event="false" data-ga-category="M-Header" data-ga-action="Click-Logo" data-ga-event-trigger="click"></a>
 			</div>
 			<div class="hs3">
-				<span class="sprite spriteCart"></span>
+				<a href="http://m.lampsplusopenbox.com/cart"class="sprite spriteCart"></a>
 			</div>
 		</header>
 		<!-- BODY -->
